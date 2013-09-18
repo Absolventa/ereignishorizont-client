@@ -6,8 +6,8 @@ require 'event_girl_client/version'
 Gem::Specification.new do |spec|
   spec.name          = "event_girl_client"
   spec.version       = EventGirlClient::VERSION
-  spec.authors       = ["Susanne Dewein"]
-  spec.email         = ["susanne.dewein@gmail.com"]
+  spec.authors       = ["Susanne Dewein", "Tam Eastley"]
+  spec.email         = ["susanne.dewein@gmail.com", "tam.eastley@googlemail.com"]
   spec.description   = %q{TODO: Write a gem description}
   spec.summary       = %q{TODO: Write a gem summary}
   spec.homepage      = ""
