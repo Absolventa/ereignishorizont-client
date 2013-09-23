@@ -1,11 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'event_girl_client/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "event_girl_client"
-  spec.version       = EventGirlClient::VERSION
+  spec.version       = EventGirl::Client::VERSION
   spec.authors       = ["Susanne Dewein", "Tam Eastley"]
   spec.email         = ["susanne.dewein@gmail.com", "tam.eastley@gmail.com"]
   spec.description   = %q{TODO: Write a gem description}

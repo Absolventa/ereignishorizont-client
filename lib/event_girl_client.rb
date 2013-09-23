@@ -1,8 +1,3 @@
-# require "event_girl_client/version"
-
-# TODO I commented out this require because it doesn't work with it.
-# Why is this, why do we need it?
-
 require 'net/http'
 require "uri"
 
@@ -12,6 +7,7 @@ require 'json'
 module EventGirl
 	class Client
 
+		VERSION = '0.0.1'
 
 		attr_reader :api_token, :url
 
