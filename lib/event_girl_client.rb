@@ -6,7 +6,7 @@ require 'rubygems'
 module EventGirl
   class Client
 
-    VERSION = '0.0.1'
+    VERSION = '0.1.0'
 
     attr_reader :api_token, :url
 
