@@ -27,13 +27,18 @@ describe EventGirl::Client do
       title = 'event girl test'
       json  = '{"api_token":"' + subject.api_token + '","incoming_event":{"title":"' + title + '"}}'
       stub_request(:post, subject.url).
+        with(body: json)
+      subject.send_event title
+    end
+
+    it 'sends json headers' do
+      stub_request(:post, subject.url).
         with(
-          body: json,
           headers: {
             'Content-Type' => 'application/json'
           }
         )
-      subject.send_event title
+      subject.send_event 'event girl test'
     end
   end
 end
