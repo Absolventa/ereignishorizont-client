@@ -9,36 +9,42 @@ require "uri"
 require 'rubygems'
 require 'json'
 
-# module EventGirlClient
+module EventGirl
+	class Client
 
-# TODO I commented out the module because for some reason it doesn't
-# work with it in. Why is this? Is a module necessary?
 
-  def send_event(url, api_token, title)
+		attr_reader :api_token, :url
 
-  	# The uri takes a url and splits it up into a path (/incoming_events),
-  	# a host (localhost) and a port (3000) which are used in the req and the response
-  	# This is necessary so that a user only has to enter the 3 parameters with
-  	# the sent_event call.
-  	uri = URI(url)
+		def initialize(url, api_token)
+			@url = url
+			@api_token = api_token
+		end
 
-  	# This takes the entered api token and title. This is what is sent. It is a HASH!
-		payload = {
-			"api_token" => api_token,
-			"title" => title
-		}
+	  def send_event(title)
 
-		# This is all the post request stuff.
-		req = Net::HTTP::Post.new(uri.path)
-		# The payload is converted to json
-		req.body = payload.to_json
-		# The content type is json
-		req.content_type = "application/json"
+	  	# The uri takes a url and splits it up into a path (/incoming_events),
+	  	# a host (localhost) and a port (3000) which are used in the req and the response
+	  	# This is necessary so that a user only has to enter the 3 parameters with
+	  	# the sent_event call.
+	  	uri = URI(url)
 
-		# The request is sent via HTTP to the host and port. You also get a response
-		# ex: 201 (it worked)
-		response = Net::HTTP.new(uri.host, uri.port).start { |http| http.request(req) }
+	  	# This takes the entered api token and title. This is what is sent. It is a HASH!
+			payload = {
+				"api_token" => api_token,
+				"title" => title
+			}
 
+			# This is all the post request stuff.
+			req = Net::HTTP::Post.new(uri.path)
+			# The payload is converted to json
+			req.body = payload.to_json
+			# The content type is json
+			req.content_type = "application/json"
+
+			# The request is sent via HTTP to the host and port. You also get a response
+			# ex: 201 (it worked)
+			response = Net::HTTP.new(uri.host, uri.port).start { |http| http.request(req) }
+
+		end
 	end
-
-# end
+end
