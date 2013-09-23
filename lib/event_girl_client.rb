@@ -27,7 +27,7 @@ module EventGirl
 	  	# This takes the entered api token and title. This is what is sent. It is a HASH!
 			payload = {
 				"api_token" => api_token,
-				"title" => title
+				"incoming_event" => { "title" => title }
 			}
 
 			# This is all the post request stuff.
