@@ -37,8 +37,7 @@ module EventGirl
 
       # The request is sent via HTTP to the host and port. You also get a response
       # ex: 201 (it worked)
-      response = Net::HTTP.new(uri.host, uri.port).start { |http| http.request(req) }
-
+      Net::HTTP.new(uri.host, uri.port).start { |http| http.request(req) }
     end
   end
 end
