@@ -21,9 +21,9 @@ module EventGirl
       # This is all the post request stuff.
       req = Net::HTTP::Post.new(uri.path)
 
-      # The content type is json
-      req.content_type = "application/json"
-      req['Accept'] = "application/json"
+      # The request format and content type is json
+      req['Accept']       = "application/json"
+      req['Content-Type'] = "application/json"
 
       # This takes the entered api token and title. This is what is sent. It is a HASH!
       req.body = '{"api_token":"' + api_token + '","incoming_event":{"title":"' + title + '"}}'
