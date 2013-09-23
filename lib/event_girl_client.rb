@@ -23,6 +23,7 @@ module EventGirl
 
       # The content type is json
       req.content_type = "application/json"
+      req['Accept'] = "application/json"
 
       # This takes the entered api token and title. This is what is sent. It is a HASH!
       req.body = '{"api_token":"' + api_token + '","incoming_event":{"title":"' + title + '"}}'

@@ -35,7 +35,8 @@ describe EventGirl::Client do
       stub_request(:post, subject.url).
         with(
           headers: {
-            'Content-Type' => 'application/json'
+            'Content-Type' => 'application/json',
+            'Accept' => 'application/json'
           }
         )
       subject.send_event 'event girl test'
