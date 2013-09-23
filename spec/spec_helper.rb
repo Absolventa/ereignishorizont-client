@@ -3,3 +3,4 @@ require 'bundler'
 Bundler.setup
 
 require 'event_girl_client'
+require 'webmock/rspec'
