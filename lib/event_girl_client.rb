@@ -17,12 +17,7 @@ module EventGirl
     end
 
     def send_event(title)
-
-      # The uri takes a url and splits it up into a path (/incoming_events),
-      # a host (localhost) and a port (3000) which are used in the req and the response
-      # This is necessary so that a user only has to enter the 3 parameters with
-      # the sent_event call.
-      uri = URI(url)
+      uri = URI.parse(url)
 
       # This is all the post request stuff.
       req = Net::HTTP::Post.new(uri.path)
