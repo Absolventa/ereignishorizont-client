@@ -24,18 +24,16 @@ module EventGirl
 	  	# the sent_event call.
 	  	uri = URI(url)
 
-	  	# This takes the entered api token and title. This is what is sent. It is a HASH!
-			payload = {
-				"api_token" => api_token,
-				"incoming_event" => { "title" => title }
-			}
-
 			# This is all the post request stuff.
 			req = Net::HTTP::Post.new(uri.path)
-			# The payload is converted to json
-			req.body = payload.to_json
+
 			# The content type is json
 			req.content_type = "application/json"
+
+	  	# This takes the entered api token and title. This is what is sent. It is a HASH!
+			req.body = <<-EOJSON
+      {"api_token":"#{api_token}","incoming_event":{"title":"#{title}"}}
+      EOJSON
 
 			# The request is sent via HTTP to the host and port. You also get a response
 			# ex: 201 (it worked)
