@@ -11,8 +11,8 @@ module EventGirl
     attr_reader :api_token, :url
 
     def initialize(url, api_token)
-      @url = url
-      @api_token = api_token
+      @url = url.to_s
+      @api_token = api_token.to_s
     end
 
     def send_event(title)
