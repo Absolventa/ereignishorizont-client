@@ -12,9 +12,9 @@ module EventGirl
     cattr_accessor :api_token, :url
     attr_reader :api_token, :url
 
-    def initialize(url, api_token)
-      @url = url.to_s
-      @api_token = api_token.to_s
+    def initialize(url = nil, api_token = nil)
+      @url       = (url       || self.class.url).to_s
+      @api_token = (api_token || self.class.api_token).to_s
     end
 
     def send_event(title)

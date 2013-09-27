@@ -23,7 +23,7 @@ describe EventGirl::Client do
   end
 
   it 'creates instances with two arguments' do
-    expect(described_class.instance_method(:initialize).arity).to eql 2
+    expect(described_class.instance_method(:initialize).arity).to eql(-1)
   end
 
   it 'sets the api_token' do
