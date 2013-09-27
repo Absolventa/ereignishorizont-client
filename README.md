@@ -2,6 +2,13 @@
 
 TODO: Write a gem description
 
+Using an initializer file for Rails, you can do:
+
+    EventGirl::Client.configure do |config|
+      config.api_token = 'my-api-token'
+      config.url = 'http://my-eventgirl-endpoint.example.com'
+    end
+
 ## Installation
 
 Add this line to your application's Gemfile:
