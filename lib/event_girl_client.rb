@@ -1,5 +1,6 @@
 require 'net/http'
 require 'uri'
+require 'active_support/core_ext/class'
 
 require 'rubygems'
 
