@@ -4,6 +4,24 @@ describe EventGirl::Client do
 
   subject { described_class.new('http://example.com/incoming_events', 'foobar') }
 
+  context 'with class-level configuration' do
+    %w(api_token url).each do |accessor|
+      it { expect(described_class).to respond_to accessor }
+      it { expect(described_class).to respond_to "#{accessor}=" }
+    end
+
+    describe '.configure' do
+      it 'sets configuration via a block' do
+        described_class.configure do |config|
+          config.api_token = 'abcdef'
+          config.url       = 'https://eg.example.com'
+        end
+        expect(described_class.api_token).to eql 'abcdef'
+        expect(described_class.url).to eql 'https://eg.example.com'
+      end
+    end
+  end
+
   it 'creates instances with two arguments' do
     expect(described_class.instance_method(:initialize).arity).to eql 2
   end

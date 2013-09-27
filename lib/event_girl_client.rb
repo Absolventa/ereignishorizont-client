@@ -9,6 +9,7 @@ module EventGirl
 
     VERSION = '0.1.0'
 
+    cattr_accessor :api_token, :url
     attr_reader :api_token, :url
 
     def initialize(url, api_token)
@@ -32,6 +33,10 @@ module EventGirl
       # The request is sent via HTTP to the host and port. You also get a response
       # ex: 201 (it worked)
       Net::HTTP.new(uri.host, uri.port).start { |http| http.request(req) }
+    end
+
+    def self.configure
+      yield self if block_given?
     end
   end
 end
