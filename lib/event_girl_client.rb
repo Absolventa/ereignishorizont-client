@@ -13,8 +13,9 @@ module EventGirl
     attr_reader :api_token, :url
 
     def initialize(url = nil, api_token = nil)
-      @url       = (url       || self.class.url).to_s
+      @url       = (url       || self.class.url)
       @api_token = (api_token || self.class.api_token).to_s
+      raise ArgumentError.new('No url provided.') unless @url
     end
 
     def send_event(title)
