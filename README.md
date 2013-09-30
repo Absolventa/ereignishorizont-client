@@ -41,6 +41,7 @@ Or install it yourself as:
 - Create an API token via the Event Girl application
 - Create an instance and start sending events:
 
+
     client = EventGirl::Client.new('http://example.com', 'mytoken')
     client.send_event 'hello from event girl client'
 
