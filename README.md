@@ -7,7 +7,7 @@ It is the gem for [Event Girl](https://github.com/Absolventa/event_girl)
 which was part of a project
 for the [Rails Girls Summer of Code](http://railsgirlssummerofcode.org).
 Its three main contributors are the 
-Rails Girls Susanne and Tam, and their coach Carsten who worked on the project 
+Rails Girls Susanne and Tam, and their coach Carsten, who worked on the project 
 from July 2 - September 30, 2013 at the [ABSOLVENTA](http://www.absolventa.de)
 offices in Berlin.
 
