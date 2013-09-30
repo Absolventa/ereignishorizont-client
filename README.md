@@ -1,6 +1,15 @@
 # EventGirlClient
 
-TODO: Write a gem description
+EventGirlClient can be used in your own app to send
+events to an external Event Girl Application such as 
+[event-girl.herokuapp.com](event-girl.herokuapp.com).
+It is the gem for [Event Girl](https://github.com/Absolventa/event_girl)
+which was part of a project
+for the [Rails Girls Summer of Code](http://railsgirlssummerofcode.org).
+Its two main contributors are the 
+Rails Girls Susanne and Tam who worked on the project 
+from July 2 - September 30, 2013 at the [ABSOLVENTA](http://www.absolventa.de)
+offices in Berlin.
 
 Using an initializer file for Rails, you can do:
 
@@ -25,7 +34,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+- Get the URL you want to send the event to 
+    - example: www.event-girl.herokuapp.com/incoming_events
+- Create an API token via the Event Girl application
+- Insert the `send_event(title)` method into your code
+    - title must be the title of the event you want to track
+- Start sending events!
 
 ## Contributing
 
