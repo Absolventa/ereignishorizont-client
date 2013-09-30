@@ -36,11 +36,11 @@ Or install it yourself as:
 
 ## Usage
 
-- Get the URL you want to send the event to 
-    - example: www.event-girl.herokuapp.com/incoming_events
-- Create an API token via the Event Girl application
-- Create an instance and start sending events:
+Get the URL you want to send the event to (example: www.event-girl.herokuapp.com/incoming_events)
 
+Create a remote side and get its API token via the Event Girl application.
+
+Create an instance and start sending events:
 
     client = EventGirl::Client.new('http://example.com', 'mytoken')
     client.send_event 'hello from event girl client'
