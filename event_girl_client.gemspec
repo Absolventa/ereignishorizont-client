@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = EventGirl::Client::VERSION
   spec.authors       = ["Susanne Dewein", "Tam Eastley"]
   spec.email         = ["susanne.dewein@gmail.com", "tam.eastley@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Ruby client library to connect to event_girl app}
+  spec.summary       = %q{Ruby client library to connect to event_girl app}
   spec.homepage      = ""
   spec.license       = "MIT"
 
