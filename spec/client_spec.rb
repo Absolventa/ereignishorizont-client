@@ -26,8 +26,14 @@ describe EventGirl::Client do
     expect(described_class.instance_method(:initialize).arity).to eql(-1)
   end
 
+  it 'raises an error when url is omitted' do
+    expect do
+      described_class.new(nil, 'abc')
+    end.to raise_error ArgumentError
+  end
+
   it 'sets the api_token' do
-    subject = described_class.new(nil, 'abcxyz')
+    subject = described_class.new('', 'abcxyz')
     expect(subject.api_token).to eql 'abcxyz'
   end
 
