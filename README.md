@@ -18,6 +18,8 @@ Using an initializer file for Rails, you can do:
       config.url = 'http://my-eventgirl-endpoint.example.com'
     end
 
+The gem also includes a command line executable. See ``event_girl -h`` for further details.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -37,9 +39,10 @@ Or install it yourself as:
 - Get the URL you want to send the event to 
     - example: www.event-girl.herokuapp.com/incoming_events
 - Create an API token via the Event Girl application
-- Insert the `send_event(title)` method into your code
-    - title must be the title of the event you want to track
-- Start sending events!
+- Create an instance and start sending events:
+
+    client = EventGirl::Client.new('http://example.com', 'mytoken')
+    client.send_event 'hello from event girl client'
 
 ## Contributing
 
