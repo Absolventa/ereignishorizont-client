@@ -1,6 +1,5 @@
 require 'net/http'
 require 'uri'
-require 'active_support/core_ext/class'
 
 require 'rubygems'
 
@@ -9,7 +8,10 @@ module EventGirl
 
     VERSION = '1.0.0'
 
-    cattr_accessor :api_token, :url
+    # Class-wide configuration
+    @@api_token = nil
+    @@url       = nil
+
     attr_reader :api_token, :url
 
     def initialize(url = nil, api_token = nil)
@@ -39,5 +41,16 @@ module EventGirl
     def self.configure
       yield self if block_given?
     end
+
+    # class attribute accessors:
+    class_variables.map{|cvar| cvar.to_s.gsub('@@', '') }.each do |cattr|
+      define_singleton_method cattr do
+        class_variable_get :"@@#{cattr}"
+      end
+      define_singleton_method "#{cattr}=" do |value|
+        class_variable_set "@@#{cattr}", value
+      end
+    end
+
   end
 end
