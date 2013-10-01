@@ -52,6 +52,11 @@ if ARGV.empty?
   exit 1
 end
 
-client = EventGirl::Client.new(options[:url], options[:api_token])
-client.send_event(ARGV[0])
+begin
+  client = EventGirl::Client.new(options[:url], options[:api_token])
+  client.send_event(ARGV[0])
+rescue => e
+  puts "E: #{e.message}"
+  exit 1
+end
 exit 0
