@@ -26,6 +26,9 @@ option_parser = OptionParser.new do |opts|
   opts.on('-s', '--site URL', 'URL of API endpoint') do |url|
     options[:url] = url
   end
+  opts.on('--debug', 'Display full stack traces') do
+    options[:debug] = true
+  end
   opts.on_tail('--version', 'Display version and exit') do
     puts opts.ver
     puts
@@ -57,6 +60,7 @@ begin
   client.send_event(ARGV[0])
 rescue => e
   puts "E: #{e.message}"
+  puts e.backtrace if options[:debug]
   exit 1
 end
 exit 0
