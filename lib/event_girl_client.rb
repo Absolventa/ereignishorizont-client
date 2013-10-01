@@ -20,6 +20,7 @@ module EventGirl
       raise ArgumentError.new('No url provided.') unless @url
     end
 
+    # POSTs a string to the event_girl server.
     def send_event(title)
       uri = URI.parse(url)
 
