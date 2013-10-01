@@ -6,8 +6,8 @@ require 'event_girl_client'
 Gem::Specification.new do |spec|
   spec.name          = "event_girl_client"
   spec.version       = EventGirl::Client::VERSION
-  spec.authors       = ["Susanne Dewein", "Tam Eastley"]
-  spec.email         = ["susanne.dewein@gmail.com", "tam.eastley@gmail.com"]
+  spec.authors       = ["Susanne Dewein", "Tam Eastley", "Carsten Zimmermann"]
+  spec.email         = ["susanne.dewein@gmail.com", "tam.eastley@gmail.com", "cz@aegisnet.de"]
   spec.description   = %q{Ruby client library to connect to event_girl app}
   spec.summary       = %q{Ruby client library to connect to event_girl app}
   spec.homepage      = ""
