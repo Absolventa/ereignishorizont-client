@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["susanne.dewein@gmail.com", "tam.eastley@gmail.com", "cz@aegisnet.de"]
   spec.description   = %q{Ruby client library to connect to event_girl app}
   spec.summary       = %q{Ruby client library to connect to event_girl app}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/Absolventa/event_girl_client"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
