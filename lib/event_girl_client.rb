@@ -53,5 +53,11 @@ module EventGirl
       end
     end
 
+    private
+
+    def ssl?
+      !!/^https:/.match(url)
+    end
+
   end
 end
