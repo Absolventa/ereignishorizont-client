@@ -36,7 +36,12 @@ module EventGirl
 
       # The request is sent via HTTP to the host and port. You also get a response
       # ex: 201 (it worked)
-      Net::HTTP.new(uri.host, uri.port).start { |http| http.request(req) }
+      http = Net::HTTP.new(uri.host, uri.port)
+
+      http.use_ssl = ssl?
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+      http.request(req)
     end
 
     def self.configure
