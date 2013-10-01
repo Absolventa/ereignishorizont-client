@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.1.1
+- Adds SSL-support
+
 ## v1.1.0
 - Fix Ruby 1.9.3 issues
 - Removed ActiveSupport dependency
