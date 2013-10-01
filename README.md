@@ -1,4 +1,4 @@
-# EventGirlClient
+# EventGirlClient [![Code Climate](https://codeclimate.com/github/Absolventa/event_girl_client.png)](https://codeclimate.com/github/Absolventa/event_girl_client)
 
 EventGirlClient can be used in your own app to send
 events to an external Event Girl Application such as 
