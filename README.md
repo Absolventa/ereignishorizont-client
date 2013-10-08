@@ -1,4 +1,4 @@
-# EventGirlClient [![Code Climate](https://codeclimate.com/github/Absolventa/event_girl_client.png)](https://codeclimate.com/github/Absolventa/event_girl_client) [![Build Status](https://travis-ci.org/Absolventa/event_girl_client.png?branch=master)](https://travis-ci.org/Absolventa/event_girl_client)
+# EventGirlClient [![Code Climate](https://codeclimate.com/github/Absolventa/event_girl_client.png)](https://codeclimate.com/github/Absolventa/event_girl_client) [![Build Status](https://travis-ci.org/Absolventa/event_girl_client.png?branch=master)](https://travis-ci.org/Absolventa/event_girl_client) [![Gem Version](https://badge.fury.io/rb/event_girl_client.png)](http://badge.fury.io/rb/event_girl_client)
 
 EventGirlClient can be used in your own app to send
 events to an external Event Girl Application such as 
