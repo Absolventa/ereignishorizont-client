@@ -15,7 +15,7 @@ Version = EventGirl::Client::VERSION.dup
 
 options = {}
 option_parser = OptionParser.new do |opts|
-  opts.banner = "Usage: event_girl [options] EVENTNAME"
+  opts.banner = "Usage: event_girl [options] EVENTNAME OPTIONAL_DATA"
 
   opts.separator ""
   opts.separator "Options:"
@@ -57,7 +57,7 @@ end
 
 begin
   client = EventGirl::Client.new(options[:url], options[:api_token])
-  client.send_event(ARGV[0])
+  client.send_event(ARGV[0], ARGV[1])
 rescue => e
   puts "E: #{e.message}"
   puts e.backtrace if options[:debug]
