@@ -43,8 +43,9 @@ describe EventGirl::Client do
   end
 
   describe '#send_event' do
+  describe '#send!' do
     it 'requires the event title and supports content optionally' do
-      expect(subject.method(:send_event).arity).to eql(-2)
+      expect(subject.method(:send!).arity).to eql(-2)
     end
 
     it 'sends json data' do
@@ -52,7 +53,7 @@ describe EventGirl::Client do
       json  = '{"api_token":"' + subject.api_token + '","incoming_event":{"title":"' + title + '","content":""}}'
       stub_request(:post, subject.url).
         with(body: json)
-      subject.send_event title
+      subject.send! title
     end
 
     it 'allows sending of optional content' do
@@ -61,7 +62,7 @@ describe EventGirl::Client do
       json    = '{"api_token":"' + subject.api_token + '","incoming_event":{"title":"' + title + '","content":"' + content + '"}}'
       stub_request(:post, subject.url).
         with(body: json)
-      subject.send_event title, content
+      subject.send! title, content
     end
 
     it 'sends json headers' do
@@ -72,7 +73,7 @@ describe EventGirl::Client do
             'Content-Type' => 'application/json'
           }
         )
-      subject.send_event 'event girl test'
+      subject.send! 'event girl test'
     end
   end
 end

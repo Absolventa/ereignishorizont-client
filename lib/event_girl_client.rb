@@ -21,7 +21,7 @@ module EventGirl
     end
 
     # POSTs a string to the event_girl server.
-    def send_event(title, content = nil)
+    def send!(title, content = nil)
       uri = URI.parse(url)
 
       # This is all the post request stuff.
