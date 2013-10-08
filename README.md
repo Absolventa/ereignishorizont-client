@@ -43,7 +43,12 @@ Create a remote side and get its API token via the Event Girl application.
 Create an instance and start sending events:
 
     client = EventGirl::Client.new('http://example.com', 'mytoken')
-    client.send_event 'hello from event girl client'
+    client.send! 'hello from event girl client'
+
+You can optionally send additional payload data:
+
+    client = EventGirl::Client.new('http://example.com', 'mytoken')
+    client.send! 'hello from event girl client', 'Optional additional data that will not be matched'
 
 ## Contributing
 
