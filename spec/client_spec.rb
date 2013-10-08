@@ -43,6 +43,16 @@ describe EventGirl::Client do
   end
 
   describe '#send_event' do
+    it 'still responds to send_event' do
+      expect(subject).to respond_to :send_event
+    end
+
+    it 'delegates to #send!' do
+      subject.should_receive(:send!).with('foo', 'bar')
+      subject.send_event('foo', 'bar')
+    end
+  end
+
   describe '#send!' do
     it 'requires the event title and supports content optionally' do
       expect(subject.method(:send!).arity).to eql(-2)
