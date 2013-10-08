@@ -20,8 +20,13 @@ module EventGirl
       raise ArgumentError.new('No url provided.') unless @url
     end
 
+    # @deprecated Use {#send!} instead.
+    def send_event(*args)
+      send!(*args)
+    end
+
     # POSTs a string to the event_girl server.
-    def send_event(title, content = nil)
+    def send!(title, content = nil)
       uri = URI.parse(url)
 
       # This is all the post request stuff.
