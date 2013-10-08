@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.2.0
+- Add support for optional content parameter
+- EventGirl::Client.send_event is deprecated, use #send! instead
+- Allows setting the url to protocol + hostname only, w/o path
+
 ## v1.1.1
 - Adds SSL-support
 

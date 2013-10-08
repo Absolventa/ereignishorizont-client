@@ -6,7 +6,7 @@ require 'rubygems'
 module EventGirl
   class Client
 
-    VERSION = '1.1.1'
+    VERSION = '1.2.0'
 
     # Class-wide configuration
     @@api_token = nil
