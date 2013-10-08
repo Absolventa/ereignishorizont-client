@@ -29,8 +29,11 @@ module EventGirl
     def send!(title, content = nil)
       uri = URI.parse(url)
 
+      # Auto-correct missing trailing slash
+      path = uri.path == '' ? '/' : uri.path
+
       # This is all the post request stuff.
-      req = Net::HTTP::Post.new(uri.path)
+      req = Net::HTTP::Post.new(path)
 
       # The request format and content type is json
       req['Accept']       = "application/json"

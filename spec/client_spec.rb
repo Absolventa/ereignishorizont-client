@@ -58,6 +58,15 @@ describe EventGirl::Client do
       expect(subject.method(:send!).arity).to eql(-2)
     end
 
+    it 'adds a missing trailing slash' do
+      url = 'http://eg.example.com'
+      stub_request(:post, "#{url}/")
+      subject = described_class.new url
+      expect do
+        subject.send! ''
+      end.not_to raise_error
+    end
+
     it 'sends json data' do
       title = 'event girl test'
       json  = '{"api_token":"' + subject.api_token + '","incoming_event":{"title":"' + title + '","content":""}}'
