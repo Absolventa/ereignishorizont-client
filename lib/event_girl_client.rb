@@ -21,8 +21,8 @@ module EventGirl
     end
 
     # @deprecated Use {#send!} instead.
-    def send_event(title, content = nil)
-      send!(title, content)
+    def send_event(*args)
+      send!(*args)
     end
 
     # POSTs a string to the event_girl server.
