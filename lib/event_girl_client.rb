@@ -21,7 +21,7 @@ module EventGirl
     end
 
     # POSTs a string to the event_girl server.
-    def send_event(title)
+    def send_event(title, content = nil)
       uri = URI.parse(url)
 
       # This is all the post request stuff.
@@ -32,7 +32,7 @@ module EventGirl
       req['Content-Type'] = "application/json"
 
       # This takes the entered api token and title. This is what is sent. It is a HASH!
-      req.body = '{"api_token":"' + api_token + '","incoming_event":{"title":"' + title.to_s + '"}}'
+      req.body = '{"api_token":"' + api_token + '","incoming_event":{"title":"' + title.to_s + '","content":"' + content.to_s + '"}}'
 
       # The request is sent via HTTP to the host and port. You also get a response
       # ex: 201 (it worked)
