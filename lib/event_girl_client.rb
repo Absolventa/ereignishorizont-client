@@ -1,12 +1,13 @@
 require 'net/http'
 require 'uri'
+require 'openssl'
 
 require 'rubygems'
 
 module EventGirl
   class Client
 
-    VERSION = '1.2.0'
+    VERSION = '1.2.1'
 
     # Class-wide configuration
     @@api_token = nil
