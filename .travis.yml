@@ -1,12 +1,12 @@
 language: ruby
 rvm:
-  - "1.9.3"
-  - "2.0.0"
-script: 'bundle exec rspec spec'
-
+- 1.9.3
+- 2.0.0
+script: bundle exec rspec spec
 notifications:
   email:
-    - tam.eastley@gmail.com
-    - susanne.dewein@gmail.com
-    - carsten.zimmermann@absolventa.de
-    - felix@mohnert.de
+  - tam.eastley@gmail.com
+  - susanne.dewein@gmail.com
+  - felix@mohnert.de
+  webhooks:
+    secure: YgIzmRfVkBhyjLeEhtnGuZ4s0J3jw1jBxrP0qh6VLx+I2bGszuv1VJAAKhhUmqXi5qyAaOeNRKYmwE1UN8P6UupmtNpxBPpki+tzZ07rHkNqC9EkCg2NgzhcNV654XjXQNEyUb4I54bpbMbQXa+aX3RokfuxWR4ernb61TelwjU=
