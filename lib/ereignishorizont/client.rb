@@ -7,7 +7,7 @@ require 'rubygems'
 module Ereignishorizont
   class Client
 
-    VERSION = '1.2.1'
+    VERSION = '2.0.0'
 
     # Class-wide configuration
     @@api_token = nil
