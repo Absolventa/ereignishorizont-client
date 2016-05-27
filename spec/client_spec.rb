@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe EventGirl::Client do
+describe Ereignishorizont::Client do
 
   subject { described_class.new('http://example.com/incoming_events', 'foobar') }
 

@@ -4,7 +4,7 @@ require 'openssl'
 
 require 'rubygems'
 
-module EventGirl
+module Ereignishorizont
   class Client
 
     VERSION = '1.2.1'
