@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'event_girl_client'
+require 'ereignishorizont/client'
 
 Gem::Specification.new do |spec|
   spec.name          = "event_girl_client"
-  spec.version       = EventGirl::Client::VERSION
+  spec.version       = Ereignishorizont::Client::VERSION
   spec.authors       = ["Susanne Dewein", "Tam Eastley", "Carsten Zimmermann"]
   spec.email         = ["susanne.dewein@gmail.com", "tam.eastley@gmail.com", "cz@aegisnet.de"]
   spec.description   = %q{Ruby client library to connect to event_girl app}
   spec.summary       = %q{Ruby client library to connect to event_girl app}
-  spec.homepage      = "https://github.com/Absolventa/event_girl_client"
+  spec.homepage      = "https://github.com/Absolventa/ereignishorizont-client"
   spec.license       = "MIT"
 
   spec.required_ruby_version = '>= 2.1'

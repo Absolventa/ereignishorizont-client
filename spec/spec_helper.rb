@@ -2,5 +2,5 @@ require 'rubygems'
 require 'bundler'
 Bundler.setup
 
-require 'event_girl_client'
+require 'ereignishorizont/client'
 require 'webmock/rspec'

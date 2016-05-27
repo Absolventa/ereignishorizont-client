@@ -3,15 +3,15 @@
 # vim: ft=ruby
 
 begin
-  require 'event_girl_client'
+  require 'ereignishorizont/client'
 rescue LoadError
   require 'rubygems'
-  require 'event_girl_client'
+  require 'ereignishorizont/client'
 end
 
 require 'optparse'
 
-Version = EventGirl::Client::VERSION.dup
+Version = Ereignishorizont::Client::VERSION.dup
 
 options = {}
 option_parser = OptionParser.new do |opts|
@@ -32,11 +32,11 @@ option_parser = OptionParser.new do |opts|
   opts.on_tail('--version', 'Display version and exit') do
     puts opts.ver
     puts
-    puts "A Ruby client library to connect to the event_girl app,"
+    puts "A Ruby client library to connect to the ereignishorizont app,"
     puts "written by Susanne Dewein, Tam Eastley, Carsten Zimmermann"
     puts "as part of the ABSOLVENTA Rails Girls Summer of Code 2013."
     puts
-    puts "© 2013 Absolventa GmbH"
+    puts "© 2013-2016 Absolventa GmbH"
     puts "This is free software; see the source for copying conditions."
     puts "There is NO warranty; not even for MERCHANTABILITY or FITNESS"
     puts "FOR A PARTICULAR PURPOSE. Licensed under the MIT license."
@@ -56,7 +56,7 @@ if ARGV.empty?
 end
 
 begin
-  client = EventGirl::Client.new(options[:url], options[:api_token])
+  client = Ereignishorizont::Client.new(options[:url], options[:api_token])
   client.send!(ARGV[0], ARGV[1])
 rescue => e
   puts "E: #{e.message}"
