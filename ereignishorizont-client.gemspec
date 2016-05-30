@@ -4,12 +4,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'ereignishorizont/client'
 
 Gem::Specification.new do |spec|
-  spec.name          = "event_girl_client"
+  spec.name          = "ereignishorizont-client"
   spec.version       = Ereignishorizont::Client::VERSION
   spec.authors       = ["Susanne Dewein", "Tam Eastley", "Carsten Zimmermann"]
   spec.email         = ["susanne.dewein@gmail.com", "tam.eastley@gmail.com", "cz@aegisnet.de"]
-  spec.description   = %q{Ruby client library to connect to event_girl app}
-  spec.summary       = %q{Ruby client library to connect to event_girl app}
+  spec.description   = %q{Ruby client library to connect to ereignishorizont app}
+  spec.summary       = %q{Ruby client library to connect to ereignishorizont app}
   spec.homepage      = "https://github.com/Absolventa/ereignishorizont-client"
   spec.license       = "MIT"
 
